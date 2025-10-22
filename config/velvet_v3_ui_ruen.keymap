@@ -70,6 +70,13 @@
             #binding-cells = <0>;
             bindings = <&lt 10 DELETE>, <&kp DELETE>;
         };
+
+        insert_key: insert_key {
+            compatible = "zmk,behavior-tap-dance";
+            label = "INSERT_KEY";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
+        };
     };
 
     combos {
@@ -262,16 +269,16 @@
             bindings = <
 &none  &none      &none      &none      &search_key    &kp LC(F5)                    &kp PAGE_UP    &kp HOME            &kp UP    &kp END              &none  &none
 &none  &kp LC(A)  &kp LALT   &kp LCTRL  &kp LSHFT      &none                         &kp PAGE_DOWN  &kp LEFT            &kp DOWN  &kp RIGHT            &none  &kp PRINTSCREEN
-&none  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)      &none                         &kp INS        &kp LC(LEFT_ARROW)  &none     &kp LC(RIGHT_ARROW)  &none  &none
+&none  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &insert_key    &none                         &kp INS        &kp LC(LEFT_ARROW)  &none     &kp LC(RIGHT_ARROW)  &none  &none
                   &none      &kp LC(D)  &kp BACKSPACE  &none       &none    &kp RET  &none          &none               &none     &none
             >;
         };
 
         number {
             bindings = <
-&trans  &trans        &trans    &trans     &trans     &trans                       &trans        &kp N7  &kp N8                &kp N9                 &trans   &trans
-&trans  &kp LG(LGUI)  &kp LALT  &kp LCTRL  &kp LSHFT  &trans                       &trans        &kp N4  &kp N5                &kp N6                 &trans   &trans
-&trans  &trans        &trans    &trans     &trans     &trans                       &trans        &kp N1  &kp N2                &kp N3                 &kp DOT  &kp COMMA
+&trans  &trans        &trans    &trans     &trans     &trans                       &trans        &kp N7  &kp N8                &kp N9                 &trans  &trans
+&trans  &kp LG(LGUI)  &kp LALT  &kp LCTRL  &kp LSHFT  &trans                       &trans        &kp N4  &kp N5                &kp N6                 &trans  &trans
+&trans  &trans        &trans    &trans     &trans     &trans                       &trans        &kp N1  &kp N2                &kp N3                 &trans  &trans
                       &trans    &trans     &trans     &kp DELETE  &trans    &none  &kp NUMBER_0  &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
             >;
         };
@@ -287,19 +294,19 @@
 
         sunaku_sym_ru {
             bindings = <
-&en TILDE    &kp LEFT_PARENTHESIS  &kp RU_DQT  &en SQT         &kp RIGHT_PARENTHESIS  &en GRAVE                          &none   &en LEFT_BRACE  &none        &none     &en RIGHT_BRACE  &trans
-&en HASH     &en CARET             &kp EQUAL   &kp UNDERSCORE  &en DOLLAR             &kp STAR                           &none   &kp LSHFT       &kp LCTRL    &kp LALT  &kp LGUI         &kp RU_QMARK
-&kp RU_EXCL  &en LESS_THAN         &en PIPE    &kp MINUS       &en GREATER_THAN       &kp RU_FSLH                        &none   &none           &kp RU_SEMI  &none     &trans           &trans
-                                   &en AMPS    &kp PLUS        &kp RU_BACKSLASH       &kp RU_COLON  &kp PRCNT    &trans  &trans  &trans          &en LBKT     &en RBKT
+&en TILDE    &en LEFT_BRACE  &kp LPAR   &kp RPAR        &en RIGHT_BRACE   &en GRAVE                          &none   &kp RU_DQT  &en SQT      &none     &none     &trans
+&en HASH     &en CARET       &kp EQUAL  &kp UNDERSCORE  &en DOLLAR        &kp STAR                           &en AT  &kp LSHFT   &kp LCTRL    &kp LALT  &kp LGUI  &kp RU_QMARK
+&kp RU_EXCL  &en LESS_THAN   &en PIPE   &kp MINUS       &en GREATER_THAN  &kp RU_FSLH                        &none   &none       &kp RU_SEMI  &none     &trans    &trans
+                             &en AMPS   &kp PLUS        &kp RU_BACKSLASH  &kp RU_COLON  &kp PRCNT    &trans  &trans  &trans      &en LBKT     &en RBKT
             >;
         };
 
         sunaku_sym_en {
             bindings = <
-&kp TILDE  &kp LEFT_PARENTHESIS  &kp DQT    &kp SQT         &kp RIGHT_PARENTHESIS  &kp GRAVE                       &none   &kp LEFT_BRACE  &none      &none     &kp RIGHT_BRACE  &trans
-&kp HASH   &kp CARET             &kp EQUAL  &kp UNDERSCORE  &kp DOLLAR             &kp STAR                        &none   &kp LSHFT       &kp LCTRL  &kp LALT  &kp LGUI         &kp QMARK
-&kp EXCL   &kp LESS_THAN         &kp PIPE   &kp MINUS       &kp GREATER_THAN       &kp FSLH                        &none   &none           &kp SEMI   &none     &trans           &trans
-                                 &kp AMPS   &kp PLUS        &kp BSLH               &kp COLON  &kp PRCNT    &trans  &trans  &trans          &kp LBKT   &kp RBKT
+&kp TILDE  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp GRAVE                       &none   &kp DQT    &kp SQT    &none     &none     &trans
+&kp HASH   &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR        &kp STAR                        &kp AT  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp QMARK
+&kp EXCL   &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp FSLH                        &none   &none      &kp SEMI   &none     &trans    &trans
+                           &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON  &kp PRCNT    &trans  &trans  &trans     &kp LBKT   &kp RBKT
             >;
         };
     };
