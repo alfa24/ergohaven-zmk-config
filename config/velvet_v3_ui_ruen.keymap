@@ -76,6 +76,20 @@
             label = "INSERT_KEY";
             #binding-cells = <0>;
             bindings = <&kp LC(V)>, <&kp LC(LS(V))>;
+
+        mouse_layer: mouse_layer {
+            compatible = "zmk,behavior-sticky-key";
+            label = "MOUSE_LAYER";
+            bindings = <&mo>;
+            #binding-cells = <1>;
+            release-after-ms = <200>;
+        };
+
+        zip_auto_mouse: zip_auto_mouse {
+            compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
+            require-prior-idle-ms = <800>;
+            excluded-positions = <>;
         };
     };
 
@@ -135,6 +149,8 @@
             #binding-cells = <0>;
             bindings = <&kp LS(CAPSLOCK)>;
             label = "TO_RU";
+            wait-ms = <0>;
+            tap-ms = <30>;
         };
 
         to_en: to_en {
@@ -142,6 +158,8 @@
             #binding-cells = <0>;
             bindings = <&kp CAPSLOCK>;
             label = "TO_EN";
+            wait-ms = <0>;
+            tap-ms = <30>;
         };
 
         layer_en: layer_en {
@@ -149,6 +167,8 @@
             #binding-cells = <0>;
             bindings = <&to 0 &to_en>;
             label = "LAYER_EN";
+            wait-ms = <0>;
+            tap-ms = <30>;
         };
 
         layer_ru: layer_ru {
@@ -156,18 +176,26 @@
             #binding-cells = <0>;
             bindings = <&to 1 &to_ru>;
             label = "LAYER_RU";
+            tap-ms = <30>;
+            wait-ms = <0>;
         };
 
         en: en {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&to_en &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_wait_time 10>,
-                <&to_ru>,
-                <&macro_wait_time 10>;
+                <&to_en>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&to_ru>;
 
             label = "EN";
+            wait-ms = <0>;
+            tap-ms = <30>;
         };
     };
 
@@ -182,11 +210,11 @@
                                  &caps_word       &layer_ru     &lt 5 BACKSPACE    &lt 6 DEL  &lt 7 ESCAPE    &lt 4 ENTER  &lt 8 SPACE  &mo 3              &kp LBKT      &kp RBKT
             >;
 
-            display-name = "en";
+            display-name = "Base";
         };
 
         ru {
-            display-name = "ru";
+            display-name = "Ru";
             bindings = <
 &kp TAB         &kp RU_CYRILLIC_SHORT_I       &kp RU_CYRILLIC_TSE             &kp RU_CYRILLIC_U          &kp RU_CYRILLIC_KA            &kp RU_CYRILLIC_IE                            &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE            &kp RU_CYRILLIC_SHA        &kp RU_CYRILLIC_SHCHA         &kp RU_CYRILLIC_ZE             &mt RU_BACKSLASH RU_SLASH
 &kp LEFT_SHIFT  &hml LEFT_WIN RU_CYRILLIC_EF  &hml LEFT_ALT RU_CYRILLIC_YERU  &hml LCTRL RU_CYRILLIC_VE  &mt LEFT_SHIFT RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                            &kp RU_CYRILLIC_ER  &hmr LEFT_SHIFT RU_CYRILLIC_O  &hmr LCTRL RU_CYRILLIC_EL  &hmr LEFT_ALT RU_CYRILLIC_DE  &hmr LEFT_WIN RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
@@ -258,6 +286,8 @@
 &kp GRAVE  &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp SLASH                          &none   &none      &kp SEMI   &none     &trans    &trans
                            &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON     &kp PRCNT    &trans  &trans  &trans     &kp LBKT   &kp RBKT
             >;
+
+            display-name = "Mouse";
         };
 
         sunaku_sym_ru {
@@ -267,6 +297,8 @@
 &en GRAVE    &en LESS_THAN   &en PIPE   &kp MINUS       &en GREATER_THAN  &kp RU_FSLH                        &none   &none       &kp RU_SEMI  &none     &trans    &trans
                              &en AMPS   &kp PLUS        &kp RU_BACKSLASH  &kp RU_COLON  &kp PRCNT    &trans  &trans  &trans      &en LBKT     &en RBKT
             >;
+
+            display-name = "Scroll";
         };
 
         sniper {
@@ -276,6 +308,8 @@
 &trans  &trans  &trans    &trans    &trans    &trans                    &mkp MB1  &mkp MB3  &trans    &trans    &trans  &trans
                 &trans    &trans    &trans    &trans  &trans    &mo 10  &mo 4     &trans    &mkp MB2  &trans
             >;
+
+            display-name = "Sniper";
         };
     };
 };
@@ -283,7 +317,7 @@
 &trackball { cpi = <1000>; };
 
 &trackball_listener {
-    input-processors = <&zip_xy_scaler 9 20>;
+    input-processors = <&zip_auto_mouse 6 500>, <&zip_xy_scaler 9 20>;
 
     scroller {
         layers = <7>;
