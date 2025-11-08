@@ -262,10 +262,10 @@
 
         sunaku_sym_en {
             bindings = <
-&kp TILDE  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp DOLLAR                       &none   &kp DQT    &kp SQT    &none     &none     &trans
-&kp EXCL   &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp HASH          &kp STAR                         &kp AT  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp QMARK
-&kp GRAVE  &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp SLASH                        &none   &none      &kp SEMI   &none     &trans    &trans
-                           &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON   &kp PRCNT    &trans  &trans  &trans     &kp LBKT   &kp RBKT
+&kp TILDE  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp DOLLAR                         &none   &kp DQT    &kp SQT    &none     &none     &trans
+&kp EXCL   &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp HASH          &kp ASTERISK                       &kp AT  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp QMARK
+&kp GRAVE  &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp SLASH                          &none   &none      &kp SEMI   &none     &trans    &trans
+                           &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON     &kp PRCNT    &trans  &trans  &trans     &kp LBKT   &kp RBKT
             >;
         };
 
