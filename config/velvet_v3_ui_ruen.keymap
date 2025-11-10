@@ -285,10 +285,10 @@
 
         function {
             bindings = <
-&trans  &trans        &trans    &trans     &trans     &studio_unlock                        &trans             &kp F7           &kp F8  &kp F9  &kp F10  &trans
-&trans  &kp LG(LGUI)  &kp LALT  &kp LCTRL  &kp LSHFT  &trans                                &trans             &kp F4           &kp F5  &kp F6  &kp F11  &trans
-&trans  &trans        &trans    &trans     &trans     &trans                                &trans             &kp F1           &kp F2  &kp F3  &kp F12  &trans
-                      &trans    &trans     &trans     &trans          &trans    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
+&none  &none         &kp LC(LA(LEFT_ARROW))  &kp LC(LA(UP))  &kp LA(LC(RIGHT_ARROW))  &studio_unlock                       &none              &kp F7           &kp F8  &kp F9  &kp F10  &none
+&none  &kp LG(LGUI)  &kp LALT                &kp LCTRL       &kp LSHFT                &none                                &none              &kp F4           &kp F5  &kp F6  &kp F11  &none
+&none  &kp LG(N4)    &kp LG(N3)              &kp LG(N2)      &kp LG(N1)               &none                                &none              &kp F1           &kp F2  &kp F3  &kp F12  &none
+                     &none                   &none           &none                    &none           &none    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none   &none
             >;
         };
 
