@@ -294,19 +294,19 @@
 
         sunaku_sym_ru {
             bindings = <
-&en TILDE    &en LEFT_BRACE  &kp LPAR   &kp RPAR        &en RIGHT_BRACE   &en GRAVE                          &none   &kp RU_DQT  &en SQT      &none     &none     &trans
-&en HASH     &en CARET       &kp EQUAL  &kp UNDERSCORE  &en DOLLAR        &kp STAR                           &en AT  &kp LSHFT   &kp LCTRL    &kp LALT  &kp LGUI  &kp RU_QMARK
-&kp RU_EXCL  &en LESS_THAN   &en PIPE   &kp MINUS       &en GREATER_THAN  &kp RU_FSLH                        &none   &none       &kp RU_SEMI  &none     &trans    &trans
+&en TILDE    &en LEFT_BRACE  &kp LPAR   &kp RPAR        &en RIGHT_BRACE   &en DOLLAR                         &none   &kp RU_DQT  &en SQT      &none     &none     &trans
+&kp RU_EXCL  &en CARET       &kp EQUAL  &kp UNDERSCORE  &en HASH          &kp STAR                           &en AT  &kp LSHFT   &kp LCTRL    &kp LALT  &kp LGUI  &kp RU_QMARK
+&en GRAVE    &en LESS_THAN   &en PIPE   &kp MINUS       &en GREATER_THAN  &kp RU_FSLH                        &none   &none       &kp RU_SEMI  &none     &trans    &trans
                              &en AMPS   &kp PLUS        &kp RU_BACKSLASH  &kp RU_COLON  &kp PRCNT    &trans  &trans  &trans      &en LBKT     &en RBKT
             >;
         };
 
         sunaku_sym_en {
             bindings = <
-&kp TILDE  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp GRAVE                       &none   &kp DQT    &kp SQT    &none     &none     &trans
-&kp HASH   &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR        &kp STAR                        &kp AT  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp QMARK
-&kp EXCL   &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp FSLH                        &none   &none      &kp SEMI   &none     &trans    &trans
-                           &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON  &kp PRCNT    &trans  &trans  &trans     &kp LBKT   &kp RBKT
+&kp TILDE  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp DOLLAR                       &none      &kp DQT    &kp SQT    &none     &none     &trans
+&kp EXCL   &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp HASH          &kp STAR                         &kp AT     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp QMARK
+&kp GRAVE  &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp FSLH                         &none      &none      &kp SEMI   &none     &trans    &trans
+                           &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON   &kp PRCNT    &trans  &trans     &trans     &kp LBKT   &kp RBKT
             >;
         };
     };
