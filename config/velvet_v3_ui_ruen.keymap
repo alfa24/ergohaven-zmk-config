@@ -148,7 +148,7 @@
         to_ru: to_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(CAPSLOCK)>;
+            bindings = <&kp LC(LEFT_SHIFT)>;
             label = "TO_RU";
             wait-ms = <0>;
             tap-ms = <30>;
@@ -157,7 +157,7 @@
         to_en: to_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp CAPSLOCK>;
+            bindings = <&kp LA(LEFT_SHIFT)>;
             label = "TO_EN";
             wait-ms = <0>;
             tap-ms = <30>;
@@ -318,7 +318,7 @@
 
         function {
             bindings = <
-&none  &none         &kp LC(LA(LEFT_ARROW))  &kp LC(LA(UP))  &kp LA(LC(RIGHT_ARROW))  &studio_unlock                       &none              &kp F7           &kp F8  &kp F9  &kp F10  &none
+&none  &none         &kp LC(LA(LEFT_ARROW))  &kp LC(LA(UP))  &kp LA(LC(RIGHT_ARROW))  &studio_unlock                       &sys_reset         &kp F7           &kp F8  &kp F9  &kp F10  &none
 &none  &kp LG(LGUI)  &kp LALT                &kp LCTRL       &kp LSHFT                &none                                &none              &kp F4           &kp F5  &kp F6  &kp F11  &none
 &none  &kp LG(N4)    &kp LG(N3)              &kp LG(N2)      &kp LG(N1)               &none                                &none              &kp F1           &kp F2  &kp F3  &kp F12  &none
                      &none                   &none           &none                    &none           &none    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none   &none
@@ -336,10 +336,10 @@
 
         sunaku_sym_en {
             bindings = <
-&kp TILDE  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp DOLLAR                       &none      &kp DQT    &kp SQT    &none     &none     &trans
-&kp EXCL   &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp HASH          &kp STAR                         &kp AT     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp QMARK
-&kp GRAVE  &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp FSLH                         &none      &none      &kp SEMI   &none     &trans    &trans
-                           &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON   &kp PRCNT    &trans  &trans     &trans     &kp LBKT   &kp RBKT
+&kp TILDE  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp DOLLAR                       &none   &kp DQT    &kp SQT    &none     &none     &trans
+&kp EXCL   &kp CARET       &kp EQUAL             &kp UNDERSCORE         &kp HASH          &kp STAR                         &kp AT  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp QMARK
+&kp GRAVE  &kp LESS_THAN   &kp PIPE              &kp MINUS              &kp GREATER_THAN  &kp FSLH                         &none   &none      &kp SEMI   &none     &trans    &trans
+                           &kp AMPS              &kp PLUS               &kp BSLH          &kp COLON   &kp PRCNT    &trans  &trans  &trans     &kp LBKT   &kp RBKT
             >;
         };
     };
